@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/get-started/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/get-started/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tag/academic/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tag/academic/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tag/hugo-blox/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tag/hugo-blox/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tag/markdown/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tag/markdown/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tags/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tags/</loc>
     <lastmod>2023-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tag/second-brain/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tag/second-brain/</loc>
     <lastmod>2023-10-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/second-brain/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/second-brain/</loc>
     <lastmod>2023-10-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/data-visualization/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/data-visualization/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tag/hugo/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tag/hugo/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/teach-courses/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/teach-courses/</loc>
     <lastmod>2023-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/</loc>
     <lastmod>2023-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/tag/hugo-blox-builder/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/tag/hugo-blox-builder/</loc>
     <lastmod>2023-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/uses/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/uses/</loc>
     <lastmod>2023-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/project-management/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/project-management/</loc>
     <lastmod>2023-10-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/categories/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>http://localhost:1313/ShinOno.github.io/blog/test-post/</loc>
+    <loc>https://irisinch.github.io/ShinOno.github.io/blog/test-post/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
