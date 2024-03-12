@@ -30,13 +30,16 @@ marketing:
 header:
   navbar:
     enable: true
+    logo:
+      text: "ShinOno"
     show_search: true
     show_theme_chooser: true
+
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: 'Copyright © Shinichiro ONO All rights reserved.' # Footer text, e.g. '© {year} Me'
     license:
       enable: true
       allow_derivatives: false
