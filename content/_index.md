@@ -2,6 +2,8 @@
 title: 'Home'
 date: 2023-10-24
 type: landing
+
+
 sections:
   - block: resume-biography
     content:
@@ -20,4 +22,6 @@ sections:
     design:
       spacing:
         padding: ['3rem', 0, '6rem', 0]
+      background:
+        color: '#f0f0f0'  # 薄灰色に変更  
 ---
