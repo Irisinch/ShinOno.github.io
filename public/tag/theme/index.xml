@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme | ShinOno</title>
+    <link>https://irisinch.github.io/ShinOno.github.io/tag/theme/</link>
+      <atom:link href="https://irisinch.github.io/ShinOno.github.io/tag/theme/index.xml" rel="self" type="application/rss+xml" />
+    <description>Theme</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 23 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://irisinch.github.io/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <title>Theme</title>
+      <link>https://irisinch.github.io/ShinOno.github.io/tag/theme/</link>
+    </image>
+    
+    <item>
+      <title>Hugo Bloxを使って個人サイトを作成する</title>
+      <link>https://irisinch.github.io/ShinOno.github.io/blog/hugo-academic/</link>
+      <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://irisinch.github.io/ShinOno.github.io/blog/hugo-academic/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;このページではHugoのテーマであるHugo bloxを使った個人サイトの作り方を紹介する。&lt;br&gt;
+Hugoで個人サイトを作るときの大きな悩みどころの1つがどのテーマを用いるかである。&lt;br&gt;
+テーマの人気ランキングを見るとよく目に入るのがAcademicであり、現在AcademicはHugo bloxに統合されている&lt;br&gt;
+Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者のチュートリアルに従うと他と異なるステップで設定する必要がある。&lt;br&gt;
+この記事では、Hugo Bloxの作者に従った方法でサイトを作成する。&lt;br&gt;
+そのため、より汎用的なHugoの使い方が知りたいなら偉大な先輩の&lt;a href=&#34;https://ymat2.github.io/site/hugo.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugoの記事&lt;/a&gt;やMetalさんの&lt;a href=&#34;https://heavywatal.github.io/misc/hugo.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;記事&lt;/a&gt;を参考にしていただきたい。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;事前準備&#34;&gt;事前準備&lt;/h1&gt;
+&lt;p&gt;今回の方法では、事前にGitHubアカウントが必要になる。&lt;br&gt;
+また、個人的にGithubアカウントと連携したVScodeの使用をお勧めする。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;テーマ選び&#34;&gt;テーマ選び&lt;/h1&gt;
+&lt;p&gt;Hugo Bloxの&lt;a href=&#34;https://hugoblox.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;テンプレート一覧&lt;/a&gt;から好きなもの選ぶ。Proと付いているものは有料。&lt;br&gt;
+&lt;a href=&#34;https://irisinch.github.io/ShinOno.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;私のサイト&lt;/a&gt;ではBlogを選んだ。&lt;br&gt;
+ここから先は、Hugo Bloxの&lt;a href=&#34;https://docs.hugoblox.com/tutorial/blog/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tutorial&lt;/a&gt;に従って進める。&lt;br&gt;
+選んだテンプレートのEditを押すと、新しいレポジトリを作成する画面に移行する。&lt;br&gt;
+このとき、レポジトリの名前を**.github.ioにする。&lt;br&gt;
+また、作成したレポジトリのSettings欄でPagesの設定を変更する必要がある。&lt;br&gt;
+ここで、Build and deploymentのSourceをGitHub Actionsに変更しておく。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;トップページの編集&#34;&gt;トップページの編集&lt;/h1&gt;
+&lt;p&gt;ここから先、tutorialでは、レポジトリのcodeボタンからCreate codespace on mainを選んで、編集していく。&lt;br&gt;&lt;br&gt;
+今回は、VScodeで進めていく。&lt;br&gt;
+VScodeのSource Control欄、Clone Repository → GitHubから複製→ 作成したレポジトリを選択し、レポジトリを開く。&lt;br&gt;
+あとは、&lt;a href=&#34;https://docs.hugoblox.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tutorial&lt;/a&gt;に従って編集するだけ。&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;所感&#34;&gt;所感&lt;/h1&gt;
+&lt;p&gt;Hugo Bloxテーマはtutorialやdocumentが充実している一方で、一般的なテーマと比べ不自由さも感じる。&lt;br&gt;
+特に、、テーマの切り替えが手軽にできないのがHugoの良さを消してしまっている気がする。&lt;br&gt;
+また、cssを使うことで構成をさらに変えることができるらしいので、チャレンジしたい。&lt;br&gt;
+Hugo Bloxのいじる上で、山本さんのホームページが参考になったので紹介しておく。（&lt;a href=&#34;https://r9y9.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サイト&lt;/a&gt;、&lt;a href=&#34;https://github.com/r9y9/website/tree/master&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;コード&lt;/a&gt;）&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
