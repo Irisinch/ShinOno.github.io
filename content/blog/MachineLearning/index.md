@@ -20,7 +20,7 @@ tags:
 <br>
 
 ## 機械学習のステップ
-![screen reader text](MLflow.png)<br>
+![screen reader text](MLflow.jpg)<br>
 ### 1. データ分割（split）
 データの一部を評価用、残りを学習（フィッティング）用に分ける。これは、新しいデータに対しても適切な予測結果が得られること（汎化性能）を重視するため行われる。
 データの分割は主に2回行われ、最初の分割では最終的な精度を試すテストデータを取り出す。次の分割では、データに対する最適なハイパーパラメータに調整するために学習用のデータ（トレーニングデータ）と調整具合を確かめる（検証用データ）に分割する。  
@@ -152,7 +152,7 @@ Algorithms used in machine learning require analysts to specify hyperparameters.
 <br><br>
 
 ## Steps of Machine Learning
-![screen reader text](MLflow.png)<br>
+![screen reader text](MLflow.jpg)<br>
 ### 1. Data Split
 A portion of the data is divided for evaluation and the remainder for training (fitting). This is done to emphasize the importance of obtaining appropriate prediction results even for new data (generalization performance).
 The data is split twice, the first split being the test data for the final accuracy. In the next split, the data is split into training data and validation data in order to adjust the hyperparameters to the best fit for the data.  
