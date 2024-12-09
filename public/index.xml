@@ -13,6 +13,406 @@
     </image>
     
     <item>
+      <title>機械学習とは</title>
+      <link>https://irisinch.github.io/ShinOno.github.io/blog/machinelearning/</link>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://irisinch.github.io/ShinOno.github.io/blog/machinelearning/</guid>
+      <description>&lt;p&gt;[[&lt;em&gt;TOC&lt;/em&gt;]]&lt;/p&gt;
+&lt;h2 id=&#34;機械学習について&#34;&gt;機械学習について&lt;/h2&gt;
+&lt;p&gt;機械学習とは、大量のデータを読み込ませ、データ内に潜むパターンを学習させることで、未知のデータを判断するためのルールを獲得することを可能にするデータ解析技術である。&lt;br&gt;
+機械学習の主要な目的は「予測」にある。機械学習の文脈での予測とは、データに含まれる変数同士の関係を抽出し、その関係を新しいデータに当てはめることで、特定の変数の値を推定することである。また、この予測は一般的な法則性を知ることとは異なる。特に、予測精度の高い機械学習手法の多くは、人間が解釈できるような知識を得られない「ブラックボックス」となっている。この点で、統計解析との大きな違いがある。&lt;br&gt;
+&lt;br&gt;
+※ 機械学習と混同される概念にAIとディープラーニング（深層学習）がある。AIとは人類の知能を再現する試み全般のことであり、機械学習とディープラーニングを内包する。ディープラーニングは、機械学習の一種の手法（多層ニューラルネットワーク）であり、これらは異なるものを示している。&lt;br&gt;
+&lt;br&gt;
+機械学習において「学習」の核となるのは、フィッティングの調整である。フィッティングは、仮説に基づく制約によりモデルを作るのではなく、データに合わせて自由にモデルを作っていく過程に近い。そのため、どこまでデータに合わせるかが重要となる。（過学習・学習不足）&lt;br&gt;
+機械学習で使われるアルゴリズムは、分析者がハイパーパラメータを指定する必要がある。通常のパラメータはモデルの形を制御する一方で、ハイパーパラメータはパラメータを決めるための条件を調整する。（4. チューニングへ）&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;機械学習のステップ&#34;&gt;機械学習のステップ&lt;/h2&gt;
+&lt;h3 id=&#34;1-データ分割split&#34;&gt;1. データ分割（split）&lt;/h3&gt;
+&lt;p&gt;データの一部を評価用、残りを学習（フィッティング）用に分ける。これは、新しいデータに対しても適切な予測結果が得られること（汎化性能）を重視するため行われる。
+データの分割は主に2回行われ、最初の分割では最終的な精度を試すテストデータを取り出す。次の分割では、データに対する最適なハイパーパラメータに調整するために学習用のデータ（トレーニングデータ）と調整具合を確かめる（検証用データ）に分割する。&lt;br&gt;
+以下、分割の手法である。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ホールドアウト法&lt;br&gt;
+サンプル数が多い時に行われる。データを任意の割合で分割し、テストデータと検証用データにする。&lt;/li&gt;
+&lt;li&gt;ランダムサンプリング&lt;br&gt;
+ランダムにデータを抽出して訓練データセットを構築し、抽出されなかったサンプルをテストに使用する。データセットの構築とテストを複数回行い、全試行の平均を最終的な評価結果として採用する。&lt;/li&gt;
+&lt;li&gt;クロスバリデーション（交差検証）法&lt;br&gt;
+何度か異なる分割を行い、学習データと検証データの異なる組み合わせを得る方法。全てのデータがテストに使用される点でランダムサンプリングと異なる。&lt;br&gt;
+分割数をkで示し、k層分割交差検証（k-folds cross validation）と呼ぶ。&lt;br&gt;
+&lt;br&gt;
+以下のサンプルコードでは、テストデータはホールドアウト法で分割し、チューニングはクロスバリデーションで行っている。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-学習&#34;&gt;2. 学習&lt;/h3&gt;
+&lt;p&gt;機械学習の利用方法は、教師あり学習と教師なし学習に大別される。&lt;br&gt;
+教師あり学習は&lt;strong&gt;回帰&lt;/strong&gt;と&lt;strong&gt;分類&lt;/strong&gt;に分かれる。&lt;br&gt;
+教師なし学習は&lt;strong&gt;クラスタリング&lt;/strong&gt;と&lt;strong&gt;次元削減&lt;/strong&gt;に分かれる。
+学習のステップでは、アルゴリズムの選択・説明変数と目的変数の選択・ハイパーパラメータの設定を行う必要がある。&lt;br&gt;
+&lt;strong&gt;以下は分類問題アルゴリズムのみの紹介である&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;正則化線形回帰&#34;&gt;正則化線形回帰&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ElasticNet (Ridge, Lasso)&lt;br&gt;
+さまざまな線形回帰モデルと組み合わせることで、モデルをなめらかにしたり、影響の小さい変数を減らすことができる。&lt;br&gt;
+&lt;a href=&#34;https://glmnet.stanford.edu/articles/glmnet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glmnet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;group Elastic Net (LASSO)&lt;br&gt;
+グループごとに変数を減らせる
+&lt;a href=&#34;https://cran.r-project.org/web/packages/grpnet/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;grpnet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;境界分類&#34;&gt;境界分類&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;SVM（Support Vector Machine）&lt;br&gt;
+空間に境界を作ることでデータを分類する。&lt;br&gt;
+非線形な分類も可能である。&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/17iVNlxBAO6eKqJaew8-H_nviWbNDsjpJ?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サンプルコード&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;決定木ベース&#34;&gt;決定木ベース&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;決定木&lt;br&gt;
+一番基礎的な決定木モデル。木に似たフローを作ることで分類する。&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/165NfKJRO89UMDwl5yMOAeD6wuZcFqA16?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サンプルコード&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ランダムフォレスト&lt;br&gt;
+たくさんの木を作り、それらの多数決を行うことで分類する。&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/1cNyNKNs5jaCD0RnGgvYfBfhqn8jy56Xh?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サンプルコード&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LightGBM&lt;br&gt;
+段階ごとに木を深くして行く。前の段階で精度の良くないノードから枝を生やすことで精度を上げて行く。&lt;/li&gt;
+&lt;li&gt;XGBoost&lt;br&gt;
+段階ごとに木を深くして行く。前までの木でうまく分類できなかった箇所を埋めるように次の木を作って行く。&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/1NdQntsLuqOBJVFjngdVUWqZn1-MUszuz?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サンプルコード&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ニューラルネットワーク&#34;&gt;🚧ニューラルネットワーク🚧&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;基本的なニューラルネットワーク&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/1ouVsJgs3CIpDOj_0mZ_rToG5E9ypd0kV?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サンプルコード&lt;/a&gt;
+&amp;laquo;Note(ニューラルネットワークのサンプルコードではGPUを用いています。&lt;br&gt;
+普段より利用できる時間・計算量に制限があるので注意して使ってください。)&amp;raquo;&lt;/li&gt;
+&lt;li&gt;畳み込みニューラルネットワーク（CNN）&lt;/li&gt;
+&lt;li&gt;再起型ニューラルネットワーク（RNN）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-評価&#34;&gt;3. 評価&lt;/h3&gt;
+&lt;p&gt;学習に用いていないデータによりモデルの予測精度を確認する。&lt;/p&gt;
+&lt;h4 id=&#34;分類問題&#34;&gt;分類問題&lt;/h4&gt;
+&lt;p&gt;分類問題では、混同行列を作成してから様々な指標を確認する。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Predicted Positive&lt;/th&gt;
+&lt;th&gt;Predicted Negative&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Actual Positive&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;TP (True Positive)&lt;/td&gt;
+&lt;td&gt;FN (False Negative)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Actual Negative&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;FP (False Positive)&lt;/td&gt;
+&lt;td&gt;TN (True Negative)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;正解率&lt;br&gt;
+全ての予測のうち、正解した予測の割合&lt;br&gt;
+TP + TN / TP + TN + FP + FN&lt;/li&gt;
+&lt;li&gt;適合率&lt;br&gt;
+陽性と予測したもののうち、実際に陽性であるものの割合
+TP / TP + FP&lt;/li&gt;
+&lt;li&gt;再現率&lt;br&gt;
+実際に陽性であるもののうち、正しく陽性と予測できたものの割合
+TP / TP + FN&lt;/li&gt;
+&lt;li&gt;F値&lt;br&gt;
+適合率と再現率の調和平均
+2 × 適合率 × 再現率 / 適合率 + 再現率&lt;/li&gt;
+&lt;li&gt;AUC-ROC&lt;br&gt;
+サンプルを正しく並び替えることができたかを示す&lt;br&gt;
+&lt;a href=&#34;https://arize.com/blog/what-is-auc/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AUC-PR&lt;br&gt;
+不均衡データの際に用いられる。ランキングが上位のサンプルの予測の正確さをより重視する。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;回帰問題&#34;&gt;回帰問題&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;平均二乗誤差（MSE）&lt;/li&gt;
+&lt;li&gt;平均絶対誤差（MAE）&lt;/li&gt;
+&lt;li&gt;平均絶対誤差率（MAPE）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-チューニング&#34;&gt;4. チューニング&lt;/h3&gt;
+&lt;p&gt;高い予測精度を得るために学習の際のハイパーパラメータの値を変えて、学習と検証データによる評価を繰り返す。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;グリッドサーチ&lt;br&gt;
+与えられたハイパーパラメータの候補の値の全パターンのモデル構築を行う手法である。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;param_grid = {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;X&amp;#34;: [&amp;#34;A&amp;#34;,  &amp;#34;B&amp;#34;], 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;Y&amp;#34;: [i / 10 for i in range(10, 20, 2)],  # out -&amp;gt; [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上記の場合、2 * 10 の20パターンでモデルが構築され、最も精度の高いパラメータが選ばれる。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ランダムサーチ&lt;br&gt;
+グリッドサーチでは網羅的に組み合わせを探索するため、モデルを緻密に調整しようと思うと膨大な時間がかかってしまう。&lt;br&gt;
+ランダムサーチは、指定されたハイパーパラメータの範囲内でランダムに値を選択し、その組み合わせに基づいてモデルの性能を評価する。&lt;br&gt;
+ランダムな組み合わせを選択するため、局所最適に陥らず、短時間で良好な組み合わせを見つけられる可能性がある。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ベイズ最適化&lt;br&gt;
+ベイズ最適化では、ランダム性に頼らず、最小限の試行で最適な解を見つけることを目指す。
+未知の目的関数をモデル化するために確率モデル（例えばガウス過程）を使用し、このモデルの上で事後分布を更新することによって、次の試行点を選択する。&lt;br&gt;
+&lt;strong&gt;サンプルコードにはoptunaでベイズ最適化を実装している。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;不均衡データ&#34;&gt;🚧不均衡データ🚧&lt;/h3&gt;
+&lt;h2 id=&#34;about-machine-learning&#34;&gt;About Machine Learning&lt;/h2&gt;
+&lt;p&gt;Machine learning is a data analysis technique that enables the acquisition of rules for making decisions about unknown data by reading large amounts of data and learning patterns latent in the data.&lt;br&gt;
+The primary goal of machine learning is &amp;ldquo;Prediction&amp;rdquo;. Prediction in the context of machine learning is to estimate the value of a particular variable by extracting the relationship between variables in the data and applying that relationship to new data. This &amp;ldquo;prediction&amp;rdquo; is also different from knowing the general rule of thumb. In particular, many machine learning methods with high prediction accuracy are “black boxes” that do not yield knowledge that can be interpreted by humans. In this respect, there is a major difference between statistical analysis.
+&lt;br&gt;&lt;br&gt;
+※ AI and deep learning are concepts that are confused with machine learning. AI refers to any attempt to reproduce human intelligence, and includes machine learning and deep learning. Deep learning is a type of machine learning technique (multilayer neural network), and these refer to different things.
+&lt;br&gt;&lt;br&gt;
+The core of &amp;ldquo;learning&amp;rdquo; in machine learning is fitting adjustment. Fitting is more like the process of freely creating a model to fit the data, rather than creating a model with constraints based on a hypothesis. Therefore, the extent to which it fits the data is important. (Overfitting, Underfitting)
+&lt;br&gt;&lt;br&gt;
+Algorithms used in machine learning require analysts to specify hyperparameters. While regular parameters control the shape of the model, hyperparameters adjust the conditions for determining the parameters. (Continue to 4. Tuning)
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;steps-of-machine-learning&#34;&gt;Steps of Machine Learning&lt;/h2&gt;
+&lt;h3 id=&#34;1-data-split&#34;&gt;1. Data Split&lt;/h3&gt;
+&lt;p&gt;A portion of the data is divided for evaluation and the remainder for training (fitting). This is done to emphasize the importance of obtaining appropriate prediction results even for new data (generalization performance).
+The data is split twice, the first split being the test data for the final accuracy. In the next split, the data is split into training data and validation data in order to adjust the hyperparameters to the best fit for the data.&lt;br&gt;
+The following is the method of division.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hold-out method&lt;br&gt;
+This is done when the number of samples is large. Data is splot into test data and data for verification at an arbitrary ratio.&lt;/li&gt;
+&lt;li&gt;Random sampling&lt;br&gt;
+Randomly extract data to construct a training data set, and use the unextracted samples for testing. Construct and test the dataset multiple times, and adopt the average of all trials as the final evaluation result.&lt;/li&gt;
+&lt;li&gt;Cross-validation method&lt;br&gt;
+A method of obtaining different combinations of training and validation data by making several different splits. It differs from random sampling in that all data are used for testing.&lt;br&gt;
+The number of splits is denoted by k and is called k-folds cross validation (k-folds cross validation).&lt;br&gt;
+&lt;br&gt;
+In the sample code below, test data is split using the holdout method and tuning is done by cross validation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-machine-learning-methods-algorithms&#34;&gt;2. Machine Learning Methods (algorithms)&lt;/h3&gt;
+&lt;p&gt;The algorithms of machine learning can be broadly divided into supervised and unsupervised learning.&lt;br&gt;
+Supervised learning is divided into &lt;strong&gt;regression&lt;/strong&gt; and &lt;strong&gt;classification&lt;/strong&gt;.&lt;br&gt;
+Unsupervised learning is divided into &lt;strong&gt;clustering&lt;/strong&gt; and &lt;strong&gt;dimension reduction&lt;/strong&gt;.
+In this step, it is necessary to select the algorithm, the explanatory and objective variables, and the hyperparameters.&lt;br&gt;
+&lt;strong&gt;The following is an introduction to the classification problem algorithms only&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;regularized-linear-regression&#34;&gt;Regularized linear regression&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ElasticNet (Ridge, Lasso)&lt;br&gt;
+Combined with various linear regression models, the model can be smoothed or reduced to variables with small effects.&lt;br&gt;
+&lt;a href=&#34;https://glmnet.stanford.edu/articles/glmnet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glmnet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;group Elastic Net (LASSO)&lt;br&gt;
+Can reduce variables per group&lt;br&gt;
+&lt;a href=&#34;https://cran.r-project.org/web/packages/grpnet/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;grpnet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;boundary-classification&#34;&gt;Boundary classification&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;SVM（Support Vector Machine）&lt;br&gt;
+Classifies data by creating boundaries in space.&lt;br&gt;
+Non-linear classification is also possible.&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/17iVNlxBAO6eKqJaew8-H_nviWbNDsjpJ?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sample code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;decision-tree-based-models&#34;&gt;Decision tree based models&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Decision tree
+The most basic decision tree model. Classification is done by creating tree-like flows.&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/165NfKJRO89UMDwl5yMOAeD6wuZcFqA16?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sample Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Random Forest&lt;br&gt;
+Classify by creating many decision trees and making majority decisions on them.&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/1cNyNKNs5jaCD0RnGgvYfBfhqn8jy56Xh?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sample Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LightGBM&lt;br&gt;
+The tree is deepened at each step. The accuracy is increased by growing branches from nodes that were not accurate in the previous stage.&lt;/li&gt;
+&lt;li&gt;XGBoost&lt;br&gt;
+At each step, the tree is made deeper. The next tree is built to fill in the areas that were not well classified in the previous trees.&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/1NdQntsLuqOBJVFjngdVUWqZn1-MUszuz?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sample Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;neural-network&#34;&gt;🚧Neural Network🚧&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;basic neural network&lt;br&gt;
+&lt;a href=&#34;https://colab.research.google.com/drive/1ouVsJgs3CIpDOj_0mZ_rToG5E9ypd0kV?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sample Code&lt;/a&gt;
+&amp;laquo;Note(The neural network sample code uses a GPU.&lt;br&gt;
+Please use with caution since there is a limit to the amount of time and computation available than usual.)&amp;raquo;&lt;/li&gt;
+&lt;li&gt;Convolutional Neural Network（CNN）&lt;/li&gt;
+&lt;li&gt;Recurrent Neural Network（RNN）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-evaluation-metrics&#34;&gt;3. Evaluation metrics&lt;/h3&gt;
+&lt;p&gt;Check the prediction accuracy of the model by data not used for training.&lt;/p&gt;
+&lt;h4 id=&#34;classification-problem&#34;&gt;Classification Problem&lt;/h4&gt;
+&lt;p&gt;For classification problems, create a confusion matrix and then check various indicators.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Predicted Positive&lt;/th&gt;
+&lt;th&gt;Predicted Negative&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Actual Positive&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;TP (True Positive)&lt;/td&gt;
+&lt;td&gt;FN (False Negative)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Actual Negative&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;FP (False Positive)&lt;/td&gt;
+&lt;td&gt;TN (True Negative)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Accuracy&lt;br&gt;
+Percentage of correct predictions out of all predictions&lt;br&gt;
+TP + TN / TP + TN + FP + FN&lt;/li&gt;
+&lt;li&gt;Precision&lt;br&gt;
+Percentage of predicted positives that are actually positive&lt;br&gt;
+TP / TP + FP&lt;/li&gt;
+&lt;li&gt;Recall
+Percentage of correctly predicted positives among those that are actually positive&lt;br&gt;
+TP / TP + FN&lt;/li&gt;
+&lt;li&gt;F1 score
+Harmonic mean of Precision and Recall&lt;br&gt;
+2 × Precision × Recall / Precision + Recallvv&lt;/li&gt;
+&lt;li&gt;AUC-ROC
+Indicates whether the sample was correctly sorted&lt;br&gt;
+&lt;a href=&#34;https://arize.com/blog/what-is-auc/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AUC-PR&lt;br&gt;
+Used for unbalanced data. Gives more weight to the accuracy of predictions for samples with higher rankings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;regression-problems&#34;&gt;Regression problems&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Mean squared error (MSE)&lt;/li&gt;
+&lt;li&gt;Mean absolute error (MAE)&lt;/li&gt;
+&lt;li&gt;Mean Absolute Percentage Error (MAPE)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-hyperparameter-tuning&#34;&gt;4. Hyperparameter tuning&lt;/h3&gt;
+&lt;p&gt;To obtain high prediction accuracy, the values of hyperparameters during training are changed, and training and evaluation with validation data are repeated.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Grid Search&lt;br&gt;
+This is a method of model building for all patterns of candidate values of a given hyperparameter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;param_grid = {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    “X“: [”A”, ‘B’], # out -&amp;gt; [1.0, 1.2, 1.4, 1.6, 1.7, 1.8 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    “Y&amp;#34;: [i / 10 for i in range(10, 20, 2)], # out -&amp;gt; [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the above case, the model is built with 20 patterns of 2 * 10, and the most accurate parameters are chosen.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Random Search&lt;br&gt;
+Grid search exhaustively searches for combinations, which takes a huge amount of time if one wants to precisely adjust the model.&lt;br&gt;
+Random Search randomly selects values within a specified hyperparameter range and evaluates model performance based on the combinations.&lt;br&gt;
+Because it selects random combinations, it does not fall into local optimization and may find good combinations in a short time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bayesian optimization&lt;br&gt;
+Bayesian optimization does not rely on randomness and aims to find the optimal solution with a minimum number of trials.
+A stochastic model (e.g., Gaussian process) is used to model the unknown objective function, and the next trial point is selected by updating the posterior distribution on this model.&lt;br&gt;
+**Sample code implements Bayesian optimization with optuna. **&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考文献references&#34;&gt;参考文献（References）&lt;/h2&gt;
+&lt;p&gt;有賀友紀、大橋俊介「RとPythonで学ぶ　実践的データサイエンス＆機械学習」（技術評論社、2019年）&lt;br&gt;
+清水秀幸「Pythonで実践 : 生命科学データの機械学習 : あなたのPCで最先端論文の解析レシピを体得できる!」（羊土社、2013年）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>edgerまとめ</title>
+      <link>https://irisinch.github.io/ShinOno.github.io/blog/edger/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://irisinch.github.io/ShinOno.github.io/blog/edger/</guid>
+      <description>&lt;p&gt;edgeRはRNA-seq, SAGE-seq, ChiP-seq, shRNA-seq, CRISPR-Cas9スクリーニングにも使えるRパッケージである。
+今回は、RNA-seqでDEG解析を行うことを前提に解説する。
+なお、内容はほぼチュートリアルの日本語訳である。&lt;/p&gt;
+&lt;h3 id=&#34;インプットファイル&#34;&gt;インプットファイル&lt;/h3&gt;
+&lt;p&gt;はじめに、edgeRのインプットファイルとして、マッピング後のリードカウントファイル(csv, tsvなど)が必要である。
+このとき、マッピングはエキソンレベルでも、遺伝子レベルでも大丈夫。
+マッピングツールとして、RsubreadのfeatureCountsが推奨されていた。（理由は不明.STARより高性能という論文は見たことがある。）
+遺伝研利用者であれば、&lt;a href=&#34;https://sc.ddbj.nig.ac.jp/advanced_guides/Rhelixa_RNAseq/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rhelixa RNAseqパイプライン&lt;/a&gt;を使っても良いと思う。
+また、このとき、行が遺伝子、列がサンプルとなっている必要がある。必要に応じてt()をつかおう。
+後述するかもしれないが、リードカウントファイルは整数である必要がある。*RPKMやFPKMではいけない。*事前に補正する際には注意。&lt;/p&gt;
+&lt;p&gt;リードカウントファイルができたらそれをRに読み込む。このとき、read.delimでもread.csvでもread.tableでも構わない
+&amp;rsquo;&amp;rsquo;&#39;
+df &amp;lt;- read.table(&amp;quot;**.txt&amp;quot;,header = TRUE,check.names=F)
+&amp;rsquo;&amp;rsquo;&#39;
+サンプルごとに異なるファイルになっている場合、readDGEが使える。
+このとき、それぞれのファイルの形式は、1列目に遺伝子名、2列目がカウントとなっている必要がある。
+また、全サンプルの名前が入ったdfを入れることもできる。
+&amp;rsquo;&amp;rsquo;&#39;
+df &amp;lt;- readDGE(file_name_vector)
+&amp;rsquo;&amp;rsquo;&#39;
+または
+&amp;rsquo;&amp;rsquo;&#39;
+files &amp;lt;- dir(pattern=&amp;quot;*\.txt$&amp;quot;)
+df &amp;lt;- readDGE(files)
+&amp;rsquo;&#39;&#39;&lt;/p&gt;
+&lt;h3 id=&#34;形式変換&#34;&gt;形式変換&lt;/h3&gt;
+&lt;p&gt;edgeRおよび、遺伝子発現量解析ツールでは、データを独自の形式に変換する。
+edgeRでh、DEGListを用いるが、EDASeqパッケージのSeqExpressionSetクラスも受け付ける。
+&amp;rsquo;&amp;rsquo;&#39;
+y &amp;lt;- DGEList(counts=df)
+&amp;rsquo;&amp;rsquo;&#39;
+このとき、グループを与えることもできるが、手動のため注意が必要。
+&amp;rsquo;&amp;rsquo;&#39;
+group &amp;lt;- c(1,1,2,2)
+y &amp;lt;- DGEList(counts=df, group=group)
+&amp;rsquo;&#39;&#39;&lt;/p&gt;
+&lt;h3 id=&#34;フィルタリング&#34;&gt;フィルタリング&lt;/h3&gt;
+&lt;p&gt;全サンプルにわたってカウントが少ない遺伝子は、後の補正に悪影響を与えるためフィルタリングする必要がある。
+見た目がわかりやすい方法では、
+&amp;rsquo;&amp;rsquo;&#39;
+keep &amp;lt;- rowSums(y$counts &amp;gt; 10) &amp;gt;=2
+y &amp;lt;- y[thresh,,keep.lib.sizes=FALSE]
+&amp;rsquo;&amp;rsquo;&#39;
+このコードでは、最低2サンプルで10カウント以上ある遺伝子のみを保持するようにする。&lt;/p&gt;
+&lt;p&gt;なお、edgeRには、filterByExpr関数がある。
+&amp;rsquo;&amp;rsquo;&#39;
+keep &amp;lt;- filterByExpr(y,min.count = 10, large.n = 2)
+y &amp;lt;- y[keep, , keep.lib.sizes=FALSE]
+&amp;rsquo;&amp;rsquo;&#39;
+filterByExprには、他にも&lt;a href=&#34;https://rdrr.io/bioc/edgeR/man/filterByExpr.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;様々な引数&lt;/a&gt;がある。
+組み合わせるとかなり便利に使えそう。&lt;/p&gt;
+&lt;h3 id=&#34;正規化&#34;&gt;正規化&lt;/h3&gt;
+&lt;p&gt;DEG解析では、発現レベルの定量化が目的ではないため正規化は少なくて済む。
+具体的には、遺伝子長による正規化などは、比較対象の両方で同じ影響をもたらすと考えられるため必要ない。&lt;/p&gt;
+&lt;h4 id=&#34;ライブラリサイズ&#34;&gt;ライブラリサイズ&lt;/h4&gt;
+&lt;p&gt;ライブラリサイズの正規化として[TMM正規化](&lt;a href=&#34;https://bi.biopapyrus.jp/rnaseq/analysis/normalizaiton/tmm.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://bi.biopapyrus.jp/rnaseq/analysis/normalizaiton/tmm.html&lt;/a&gt;を行う関数が用意されている。
+&amp;rsquo;&amp;rsquo;&#39;
+y &amp;lt;- calcNormFactors(y)
+&amp;rsquo;&amp;rsquo;&#39;
+method=c(&amp;ldquo;TMM&amp;rdquo;,&amp;ldquo;RLE&amp;rdquo;,&amp;ldquo;upperquartile&amp;rdquo;,&amp;ldquo;none&amp;rdquo;)で正規化の手法が選べる、&lt;/p&gt;
+&lt;h4 id=&#34;gc含有量&#34;&gt;GC含有量&lt;/h4&gt;
+&lt;p&gt;GC含有量がサンプル特異的に影響することが最近判明したらしい。
+正規化としてはm&lt;a href=&#34;https://bioconductor.org/packages/release/bioc/html/EDASeq.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EDASeq&lt;/a&gt;や&lt;a href=&#34;https://bioconductor.org/packages/release/bioc/html/cqn.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cqn&lt;/a&gt;パッケージが紹介されている。&lt;/p&gt;
+&lt;h4 id=&#34;遺伝子長&#34;&gt;遺伝子長&lt;/h4&gt;
+&lt;p&gt;GC含有量ほどではないものの、遺伝子長の影響もあるらしい。
+特に、方法は示されていなかったが、EDASeqで可能である。&lt;/p&gt;
+&lt;h4 id=&#34;その他の正規化&#34;&gt;その他の正規化&lt;/h4&gt;
+&lt;p&gt;edgeRのglm関数でその他の影響を考慮した正規化が可能であるらしい。&lt;/p&gt;
+&lt;h3 id=&#34;サンプル間比較&#34;&gt;サンプル間比較&lt;/h3&gt;
+&lt;h4 id=&#34;2群間比較&#34;&gt;2群間比較&lt;/h4&gt;
+&lt;p&gt;EdgeRでは、単一要因によるDEG解析ではqCML法(the quantile-adjusted conditional maximum likelihood)を用いる。
+&amp;rsquo;&amp;rsquo;&#39;
+y &amp;lt;- estimateDisp(y)
+&amp;rsquo;&amp;rsquo;&#39;
+&amp;rsquo;&amp;rsquo;&#39;
+et &amp;lt;- exactTest(y) # 比較
+topTags(et) # 結果の表示
+&amp;rsquo;&#39;&#39;&lt;/p&gt;
+&lt;h4 id=&#34;複雑な比較&#34;&gt;複雑な比較&lt;/h4&gt;
+&lt;p&gt;y &amp;lt;- estimateDisp(y, design)とすることで、複雑な因子を考慮することが可能&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugo Bloxを使って個人サイトを作成する</title>
       <link>https://irisinch.github.io/ShinOno.github.io/blog/hugo-blox/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
@@ -50,10 +450,10 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
 &lt;figure  &gt;
   &lt;div class=&#34;flex justify-center	&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;screen reader text&#34; srcset=&#34;
-               /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_79a86112024f196c6a4bf41bf468b534.webp 400w,
+               /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_c562f56c0c1d71a2ede91b0d40f09133.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_79a86112024f196c6a4bf41bf468b534.webp&#34;
+               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp&#34;
                width=&#34;760&#34;
                height=&#34;566&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -78,10 +478,10 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
 &lt;figure  &gt;
   &lt;div class=&#34;flex justify-center	&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;screen reader text&#34; srcset=&#34;
-               /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_3cd205c8dff5bbad9c2a0368f4bd1b2e.webp 400w,
+               /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_993a7ce9c71a7de791c391567f348155.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_3cd205c8dff5bbad9c2a0368f4bd1b2e.webp&#34;
+               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp&#34;
                width=&#34;760&#34;
                height=&#34;371&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -108,10 +508,10 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
 &lt;figure  &gt;
   &lt;div class=&#34;flex justify-center	&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;screen reader text&#34; srcset=&#34;
-               /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_029d019daec256cb5e1cc20a69821d03.webp 400w,
+               /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_2c088af101afb79946607841d4e38f29.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_029d019daec256cb5e1cc20a69821d03.webp&#34;
+               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp&#34;
                width=&#34;760&#34;
                height=&#34;401&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -141,10 +541,10 @@ VScodeのSource Control欄、Clone Repository → GitHubから複製→ 作成�
 &lt;figure  &gt;
   &lt;div class=&#34;flex justify-center	&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;screen reader text&#34; srcset=&#34;
-               /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_68ecc3310cfb1d931a16fb053990823f.webp 400w,
+               /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_8060e005c9029986ab069090bb0c9784.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_68ecc3310cfb1d931a16fb053990823f.webp&#34;
+               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp&#34;
                width=&#34;760&#34;
                height=&#34;570&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
