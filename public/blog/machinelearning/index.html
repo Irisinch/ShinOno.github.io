@@ -766,8 +766,7 @@
       
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        <p>[[<em>TOC</em>]]</p>
-<h2 id="機械学習について">機械学習について</h2>
+        <h2 id="機械学習について">機械学習について</h2>
 <p>機械学習とは、大量のデータを読み込ませ、データ内に潜むパターンを学習させることで、未知のデータを判断するためのルールを獲得することを可能にするデータ解析技術である。<br>
 機械学習の主要な目的は「予測」にある。機械学習の文脈での予測とは、データに含まれる変数同士の関係を抽出し、その関係を新しいデータに当てはめることで、特定の変数の値を推定することである。また、この予測は一般的な法則性を知ることとは異なる。特に、予測精度の高い機械学習手法の多くは、人間が解釈できるような知識を得られない「ブラックボックス」となっている。この点で、統計解析との大きな違いがある。<br>
 <br>
@@ -777,6 +776,27 @@
 機械学習で使われるアルゴリズムは、分析者がハイパーパラメータを指定する必要がある。通常のパラメータはモデルの形を制御する一方で、ハイパーパラメータはパラメータを決めるための条件を調整する。（4. チューニングへ）<br>
 <br></p>
 <h2 id="機械学習のステップ">機械学習のステップ</h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="flex justify-center	">
+    <div class="w-100" ><img src="MLflow.png" alt="screen reader text" loading="lazy" data-zoomable /></div>
+  </div></figure>
+<br></p>
 <h3 id="1-データ分割split">1. データ分割（split）</h3>
 <p>データの一部を評価用、残りを学習（フィッティング）用に分ける。これは、新しいデータに対しても適切な予測結果が得られること（汎化性能）を重視するため行われる。
 データの分割は主に2回行われ、最初の分割では最終的な精度を試すテストデータを取り出す。次の分割では、データに対する最適なハイパーパラメータに調整するために学習用のデータ（トレーニングデータ）と調整具合を確かめる（検証用データ）に分割する。<br>
@@ -928,6 +948,27 @@ The core of &ldquo;learning&rdquo; in machine learning is fitting adjustment. Fi
 Algorithms used in machine learning require analysts to specify hyperparameters. While regular parameters control the shape of the model, hyperparameters adjust the conditions for determining the parameters. (Continue to 4. Tuning)
 <br><br></p>
 <h2 id="steps-of-machine-learning">Steps of Machine Learning</h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="flex justify-center	">
+    <div class="w-100" ><img src="MLflow.png" alt="screen reader text" loading="lazy" data-zoomable /></div>
+  </div></figure>
+<br></p>
 <h3 id="1-data-split">1. Data Split</h3>
 <p>A portion of the data is divided for evaluation and the remainder for training (fitting). This is done to emphasize the importance of obtaining appropriate prediction results even for new data (generalization performance).
 The data is split twice, the first split being the test data for the final accuracy. In the next split, the data is split into training data and validation data in order to adjust the hyperparameters to the best fit for the data.<br>
