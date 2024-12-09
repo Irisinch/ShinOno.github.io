@@ -1,0 +1,5 @@
+article {
+    max-width: 100% !important;  /* 必要な幅に変更（例: 90%） */
+    margin: 0 auto;             /* 横方向の中央揃え */
+    padding: 20px;              /* 必要に応じて内側の余白を設定 */
+  }

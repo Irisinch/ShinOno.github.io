@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Theme | ShinOno</title>
-    <link>https://irisinch.github.io/ShinOno.github.io/tag/theme/</link>
-      <atom:link href="https://irisinch.github.io/ShinOno.github.io/tag/theme/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/ShinOno.github.io/tag/theme/</link>
+      <atom:link href="http://localhost:1313/ShinOno.github.io/tag/theme/index.xml" rel="self" type="application/rss+xml" />
     <description>Theme</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 13 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://irisinch.github.io/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Theme</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/tag/theme/</link>
+      <link>http://localhost:1313/ShinOno.github.io/tag/theme/</link>
     </image>
     
     <item>
       <title>Hugo Bloxを使って個人サイトを作成する</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/hugo-blox/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/hugo-blox/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/hugo-blox/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/hugo-blox/</guid>
       <description>&lt;h3 id=&#34;はじめに&#34;&gt;はじめに&lt;/h3&gt;
 &lt;p&gt;このページではHugoのテーマであるHugo bloxを使った個人サイトの作り方を紹介する。&lt;br&gt;
 Hugoで個人サイトを作るときの大きな悩みどころの1つがどのテーマを用いるかである。&lt;br&gt;
@@ -53,7 +53,7 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_c562f56c0c1d71a2ede91b0d40f09133.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp&#34;
                width=&#34;760&#34;
                height=&#34;566&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -81,7 +81,7 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_993a7ce9c71a7de791c391567f348155.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp&#34;
                width=&#34;760&#34;
                height=&#34;371&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -111,7 +111,7 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_2c088af101afb79946607841d4e38f29.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp&#34;
                width=&#34;760&#34;
                height=&#34;401&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -144,7 +144,7 @@ VScodeのSource Control欄、Clone Repository → GitHubから複製→ 作成�
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_8060e005c9029986ab069090bb0c9784.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp&#34;
                width=&#34;760&#34;
                height=&#34;570&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;

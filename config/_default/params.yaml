@@ -61,3 +61,7 @@ features:
     url: 'https://github.com/HugoBlox/hugo-blox-builder/'
     content_dir: starters/blog/content
     branch: main
+
+params:
+  plugins_css:
+    - "custom"

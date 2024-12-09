@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog | ShinOno</title>
-    <link>https://irisinch.github.io/ShinOno.github.io/blog/</link>
-      <atom:link href="https://irisinch.github.io/ShinOno.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/ShinOno.github.io/blog/</link>
+      <atom:link href="http://localhost:1313/ShinOno.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 09 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://irisinch.github.io/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Blog</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/</link>
     </image>
     
     <item>
       <title>機械学習とは</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/machinelearning/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/machinelearning/</link>
       <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/machinelearning/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/machinelearning/</guid>
       <description>&lt;h2 id=&#34;機械学習について&#34;&gt;機械学習について&lt;/h2&gt;
 &lt;p&gt;機械学習とは、大量のデータを読み込ませ、データ内に潜むパターンを学習させることで、未知のデータを判断するためのルールを獲得することを可能にするデータ解析技術である。&lt;br&gt;
 機械学習の主要な目的は「予測」にある。機械学習の文脈での予測とは、データに含まれる変数同士の関係を抽出し、その関係を新しいデータに当てはめることで、特定の変数の値を推定することである。また、この予測は一般的な法則性を知ることとは異なる。特に、予測精度の高い機械学習手法の多くは、人間が解釈できるような知識を得られない「ブラックボックス」となっている。この点で、統計解析との大きな違いがある。&lt;br&gt;
@@ -46,10 +46,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;flex justify-center	&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;screen reader text&#34; srcset=&#34;
-               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_ac3bfbf2edf604c98398c4115e6aec4d.webp 400w,
-               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_3d70ff7413edae87e70c8dc4d8041918.webp 760w,
+               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_21805564c2cc217a8474332a28f747bf.webp 400w,
+               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_26e481632bda279460b338dc739e21d5.webp 760w,
                /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_1200x1200_fit_q95_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_ac3bfbf2edf604c98398c4115e6aec4d.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_21805564c2cc217a8474332a28f747bf.webp&#34;
                width=&#34;760&#34;
                height=&#34;365&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -225,10 +225,10 @@ Algorithms used in machine learning require analysts to specify hyperparameters.
 &lt;figure  &gt;
   &lt;div class=&#34;flex justify-center	&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;screen reader text&#34; srcset=&#34;
-               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_ac3bfbf2edf604c98398c4115e6aec4d.webp 400w,
-               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_3d70ff7413edae87e70c8dc4d8041918.webp 760w,
+               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_21805564c2cc217a8474332a28f747bf.webp 400w,
+               /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_26e481632bda279460b338dc739e21d5.webp 760w,
                /ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_1200x1200_fit_q95_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_ac3bfbf2edf604c98398c4115e6aec4d.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/machinelearning/MLflow_hu3a0063144fa60b702a61cc3db4cff908_583687_21805564c2cc217a8474332a28f747bf.webp&#34;
                width=&#34;760&#34;
                height=&#34;365&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -381,9 +381,9 @@ A stochastic model (e.g., Gaussian process) is used to model the unknown objecti
     
     <item>
       <title>edgerまとめ</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/edger/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/edger/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/edger/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/edger/</guid>
       <description>&lt;p&gt;edgeRはRNA-seq, SAGE-seq, ChiP-seq, shRNA-seq, CRISPR-Cas9スクリーニングにも使えるRパッケージである。
 今回は、RNA-seqでDEG解析を行うことを前提に解説する。
 なお、内容はほぼチュートリアルの日本語訳である。&lt;/p&gt;
@@ -469,9 +469,9 @@ topTags(et) # 結果の表示
     
     <item>
       <title>Hugo Bloxを使って個人サイトを作成する</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/hugo-blox/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/hugo-blox/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/hugo-blox/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/hugo-blox/</guid>
       <description>&lt;h3 id=&#34;はじめに&#34;&gt;はじめに&lt;/h3&gt;
 &lt;p&gt;このページではHugoのテーマであるHugo bloxを使った個人サイトの作り方を紹介する。&lt;br&gt;
 Hugoで個人サイトを作るときの大きな悩みどころの1つがどのテーマを用いるかである。&lt;br&gt;
@@ -508,7 +508,7 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_c562f56c0c1d71a2ede91b0d40f09133.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/Edit_hue99aad4f93e0bc2399b9fdcfbaf3f7cb_912939_21fcaa0face693d234676de47780f298.webp&#34;
                width=&#34;760&#34;
                height=&#34;566&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -536,7 +536,7 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_993a7ce9c71a7de791c391567f348155.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/new-repository_huecd4bc6ceb715b8b0aaae933848b26db_366031_6bd55fd54ade4f602d603c82a90a5e1a.webp&#34;
                width=&#34;760&#34;
                height=&#34;371&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -566,7 +566,7 @@ Hugo Bloxは（特にAcademicは）人気のテーマである一方で、作者
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_2c088af101afb79946607841d4e38f29.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/github-actions_hu6a929ff7989871a3c3a20955e83b208d_533295_9c6c706a2fc6f5b9fca94054e565a449.webp&#34;
                width=&#34;760&#34;
                height=&#34;401&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -599,7 +599,7 @@ VScodeのSource Control欄、Clone Repository → GitHubから複製→ 作成�
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp 400w,
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_8060e005c9029986ab069090bb0c9784.webp 760w,
                /ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_1200x1200_fit_q95_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://irisinch.github.io/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp&#34;
+               src=&#34;http://localhost:1313/ShinOno.github.io/ShinOno.github.io/blog/hugo-blox/vscode_hu5b1387648e88086189a96ed3ca89519a_196909_bd74d825e885f753f12fff7ae210aae7.webp&#34;
                width=&#34;760&#34;
                height=&#34;570&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -616,9 +616,9 @@ Hugo Bloxのいじる上で、山本さんのホームページが参考にな�
     
     <item>
       <title>✅ Manage your projects</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/project-management/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/project-management/</link>
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/project-management/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/project-management/</guid>
       <description>&lt;p&gt;Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!&lt;/p&gt;
 &lt;h2 id=&#34;ideation&#34;&gt;Ideation&lt;/h2&gt;
 &lt;p&gt;Hugo Blox supports a Markdown extension for mindmaps.&lt;/p&gt;
@@ -691,9 +691,9 @@ Parallel 4   :         des6, after des4, 1d
     
     <item>
       <title>test</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/test-post/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/test-post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/test-post/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/test-post/</guid>
       <description>&lt;p&gt;This is test.&lt;/p&gt;
 </description>
     </item>

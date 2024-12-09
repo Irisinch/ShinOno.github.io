@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bioinfomatics | ShinOno</title>
-    <link>https://irisinch.github.io/ShinOno.github.io/tag/bioinfomatics/</link>
-      <atom:link href="https://irisinch.github.io/ShinOno.github.io/tag/bioinfomatics/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/ShinOno.github.io/tag/bioinfomatics/</link>
+      <atom:link href="http://localhost:1313/ShinOno.github.io/tag/bioinfomatics/index.xml" rel="self" type="application/rss+xml" />
     <description>Bioinfomatics</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 13 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://irisinch.github.io/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/ShinOno.github.io/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>Bioinfomatics</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/tag/bioinfomatics/</link>
+      <link>http://localhost:1313/ShinOno.github.io/tag/bioinfomatics/</link>
     </image>
     
     <item>
       <title>edgerまとめ</title>
-      <link>https://irisinch.github.io/ShinOno.github.io/blog/edger/</link>
+      <link>http://localhost:1313/ShinOno.github.io/blog/edger/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://irisinch.github.io/ShinOno.github.io/blog/edger/</guid>
+      <guid>http://localhost:1313/ShinOno.github.io/blog/edger/</guid>
       <description>&lt;p&gt;edgeRはRNA-seq, SAGE-seq, ChiP-seq, shRNA-seq, CRISPR-Cas9スクリーニングにも使えるRパッケージである。
 今回は、RNA-seqでDEG解析を行うことを前提に解説する。
 なお、内容はほぼチュートリアルの日本語訳である。&lt;/p&gt;
